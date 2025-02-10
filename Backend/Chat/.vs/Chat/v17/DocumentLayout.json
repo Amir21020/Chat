@@ -5,6 +5,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{43422FF3-543A-41A7-9512-13E2311AE9B1}|Chat\\Chat.csproj|d:\\projects\\chat\\backend\\chat\\chat\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{43422FF3-543A-41A7-9512-13E2311AE9B1}|Chat\\Chat.csproj|solutionrelative:chat\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43422FF3-543A-41A7-9512-13E2311AE9B1}|Chat\\Chat.csproj|d:\\projects\\chat\\backend\\chat\\chat\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43422FF3-543A-41A7-9512-13E2311AE9B1}|Chat\\Chat.csproj|solutionrelative:chat\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43422FF3-543A-41A7-9512-13E2311AE9B1}|Chat\\Chat.csproj|d:\\projects\\chat\\backend\\chat\\chat\\models\\userconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43422FF3-543A-41A7-9512-13E2311AE9B1}|Chat\\Chat.csproj|solutionrelative:chat\\models\\userconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43422FF3-543A-41A7-9512-13E2311AE9B1}|Chat\\Chat.csproj|d:\\projects\\chat\\backend\\chat\\chat\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{43422FF3-543A-41A7-9512-13E2311AE9B1}|Chat\\Chat.csproj|solutionrelative:chat\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +26,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 206,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "D:\\Projects\\Chat\\Backend\\Chat\\Chat\\Hubs\\ChatHub.cs",
+              "RelativeDocumentMoniker": "Chat\\Hubs\\ChatHub.cs",
+              "ToolTip": "D:\\Projects\\Chat\\Backend\\Chat\\Chat\\Hubs\\ChatHub.cs",
+              "RelativeToolTip": "Chat\\Hubs\\ChatHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T08:20:24.96Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -54,15 +80,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ChatHub.cs",
-              "DocumentMoniker": "D:\\Projects\\Chat\\Backend\\Chat\\Chat\\Hubs\\ChatHub.cs",
-              "RelativeDocumentMoniker": "Chat\\Hubs\\ChatHub.cs",
-              "ToolTip": "D:\\Projects\\Chat\\Backend\\Chat\\Chat\\Hubs\\ChatHub.cs",
-              "RelativeToolTip": "Chat\\Hubs\\ChatHub.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAYwBIAAABVAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Projects\\Chat\\Backend\\Chat\\Chat\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Chat\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\Projects\\Chat\\Backend\\Chat\\Chat\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Chat\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAwBwAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-10T08:21:02.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserConnection.cs",
+              "DocumentMoniker": "D:\\Projects\\Chat\\Backend\\Chat\\Chat\\Models\\UserConnection.cs",
+              "RelativeDocumentMoniker": "Chat\\Models\\UserConnection.cs",
+              "ToolTip": "D:\\Projects\\Chat\\Backend\\Chat\\Chat\\Models\\UserConnection.cs",
+              "RelativeToolTip": "Chat\\Models\\UserConnection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T06:37:41.695Z",
+              "WhenOpened": "2025-02-10T08:20:13.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projects\\Chat\\Backend\\Chat\\Chat\\Program.cs",
+              "RelativeDocumentMoniker": "Chat\\Program.cs",
+              "ToolTip": "D:\\Projects\\Chat\\Backend\\Chat\\Chat\\Program.cs",
+              "RelativeToolTip": "Chat\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T07:00:08.366Z",
               "EditorCaption": ""
             }
           ]
