@@ -8,7 +8,7 @@ export const Chat = ({ messages, chatRoom, closeChat, sendMessage }) => {
 
     useEffect(() => {
         messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
-    }, [messages]); // Зависимость от messages
+    }, [messages]);
 
     const onSendMessage = () => {
         sendMessage(message);
