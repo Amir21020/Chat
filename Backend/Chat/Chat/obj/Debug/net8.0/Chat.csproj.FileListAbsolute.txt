@@ -23,3 +23,14 @@ D:\Projects\Chat\Backend\Chat\Chat\obj\Debug\net8.0\refint\Chat.dll
 D:\Projects\Chat\Backend\Chat\Chat\obj\Debug\net8.0\Chat.pdb
 D:\Projects\Chat\Backend\Chat\Chat\obj\Debug\net8.0\Chat.genruntimeconfig.cache
 D:\Projects\Chat\Backend\Chat\Chat\obj\Debug\net8.0\ref\Chat.dll
+D:\Projects\Chat\Backend\Chat\Chat\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Projects\Chat\Backend\Chat\Chat\bin\Debug\net8.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+D:\Projects\Chat\Backend\Chat\Chat\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Projects\Chat\Backend\Chat\Chat\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Projects\Chat\Backend\Chat\Chat\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\Projects\Chat\Backend\Chat\Chat\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+D:\Projects\Chat\Backend\Chat\Chat\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+D:\Projects\Chat\Backend\Chat\Chat\bin\Debug\net8.0\StackExchange.Redis.dll
+D:\Projects\Chat\Backend\Chat\Chat\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+D:\Projects\Chat\Backend\Chat\Chat\obj\Debug\net8.0\Chat.csproj.AssemblyReference.cache
+D:\Projects\Chat\Backend\Chat\Chat\obj\Debug\net8.0\Chat.csproj.Up2Date
