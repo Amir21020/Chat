@@ -13,6 +13,7 @@
     "@chakra-ui/react": "^2.10.5",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@microsoft/signalr": "^8.0.7",
     "@tailwindcss/vite": "^4.0.5",
     "framer-motion": "^12.4.1",
     "react": "^19.0.0",

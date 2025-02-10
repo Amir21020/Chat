@@ -1,11 +1,11 @@
-
-import './App.css'
-
+import { WaitingRoom } from "./components/WaitingRoom"
 
 function App() {
 
   return (
-    <div></div>
+    <div className="min-h-screen flex items-center justify-center bg-gry-100">
+      <WaitingRoom />
+    </div>
   )
 }
 
