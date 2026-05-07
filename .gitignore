@@ -1,0 +1,18 @@
+## .NET
+bin/
+obj/
+*.user
+
+## VS
+.vs/
+
+## NuGet
+packages/
+
+## Frontend
+node_modules/
+dist/
+
+## OS
+.DS_Store
+Thumbs.db

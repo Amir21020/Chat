@@ -1,13 +1,25 @@
 import { Heading, Text, Input, Button } from "@chakra-ui/react"
 import { useState } from "react"
 
-export const WaitingRoom = ({ joinChat }) => {
-    const [userName, setUserName] = useState()
-    const [chatRoom, setChatRoom] = useState()
+export const WaitingRoom = ({ joinChat, error }) => {
+    const [userName, setUserName] = useState("")
+    const [chatRoom, setChatRoom] = useState("")
+    const [validationError, setValidationError] = useState("")
 
     const onSubmit = (e) => {
         e.preventDefault()
-        joinChat(userName, chatRoom)
+        setValidationError("")
+
+        if (!userName.trim()) {
+            setValidationError("Введите имя пользователя")
+            return
+        }
+        if (!chatRoom.trim()) {
+            setValidationError("Введите название чата")
+            return
+        }
+
+        joinChat(userName.trim(), chatRoom.trim())
     }
 
     return (
@@ -21,9 +33,14 @@ export const WaitingRoom = ({ joinChat }) => {
                 <Text fontSize={"sm"}>Название чата</Text>
                 <Input onChange={(e) => setChatRoom(e.target.value) } name="chatRoom" placeholder="Введите название чата" />
             </div>
-            <Button type="submit" colorScheme="blue">
-                Присоединиться
-            </Button>
+            {(validationError || error) && (
+                <div className="mb-4 text-red-500 text-sm">{validationError || error}</div>
+            )}
+            <div className="flex justify-center">
+                <Button type="submit" colorScheme="blue">
+                    Присоединиться
+                </Button>
+            </div>
         </form>
     )
 }

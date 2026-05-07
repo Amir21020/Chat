@@ -7,8 +7,9 @@ namespace Chat.Hubs;
 
 public interface IChatClient
 {
-    public Task ReceivedMessage(string userName,
+    Task ReceivedMessage(string userName,
         string message);
+    Task UserListUpdated(List<string> users);
 }
 
 public sealed class ChatHub(IDistributedCache cache) : Hub<IChatClient>
@@ -22,8 +23,13 @@ public sealed class ChatHub(IDistributedCache cache) : Hub<IChatClient>
         
         await cache.SetStringAsync(Context.ConnectionId, stringConnection);
 
+        await AddUserToRoomAsync(connection.ChatRoom, connection.UserName);
+
         await Clients.Group(connection.ChatRoom)
             .ReceivedMessage("Admin", $"{connection.UserName} присоединился к чату");
+
+        var users = await GetUsersInRoomAsync(connection.ChatRoom);
+        await Clients.Group(connection.ChatRoom).UserListUpdated(users);
     }
 
     public async Task SendMessage(string message)
@@ -32,26 +38,63 @@ public sealed class ChatHub(IDistributedCache cache) : Hub<IChatClient>
 
         var connection = JsonSerializer.Deserialize<UserConnection>(connectionString);
 
-        if(connection is not null)
+        if (connection is not null)
         {
             await Clients.Group(connection.ChatRoom).ReceivedMessage(connection.UserName, message);
         }
-
     }
 
-    public async override Task OnDisconnectedAsync(Exception? exception)
+    public async Task<List<string>> GetUsersInRoomAsync(string chatRoom)
+    {
+        var usersJson = await cache.GetStringAsync($"room:{chatRoom}:users");
+        if (usersJson is null) return [];
+        return JsonSerializer.Deserialize<List<string>>(usersJson) ?? [];
+    }
+
+    public override async Task OnDisconnectedAsync(Exception? exception)
     {
         var connectionString = await cache.GetStringAsync(Context.ConnectionId);
 
         var connection = JsonSerializer.Deserialize<UserConnection>(connectionString);
 
-        if(connection is not null )
+        if (connection is not null)
         {
             await Groups.RemoveFromGroupAsync(Context.ConnectionId, connection.ChatRoom);
-            await Clients.Group(connection.ChatRoom).ReceivedMessage("Admin", $"{connection.UserName} вышел из чата");
+
+            await RemoveUserFromRoomAsync(connection.ChatRoom, connection.UserName);
+
+            await Clients.Group(connection.ChatRoom)
+                .ReceivedMessage("Admin", $"{connection.UserName} вышел из чата");
+
+            var users = await GetUsersInRoomAsync(connection.ChatRoom);
+            await Clients.Group(connection.ChatRoom).UserListUpdated(users);
+
             await cache.RemoveAsync(Context.ConnectionId);
         }
 
         await base.OnDisconnectedAsync(exception);
+    }
+
+    private async Task AddUserToRoomAsync(string room, string userName)
+    {
+        var usersJson = await cache.GetStringAsync($"room:{room}:users");
+        var users = usersJson is not null
+            ? JsonSerializer.Deserialize<List<string>>(usersJson) ?? []
+            : [];
+
+        if (!users.Contains(userName))
+            users.Add(userName);
+
+        await cache.SetStringAsync($"room:{room}:users", JsonSerializer.Serialize(users));
+    }
+
+    private async Task RemoveUserFromRoomAsync(string room, string userName)
+    {
+        var usersJson = await cache.GetStringAsync($"room:{room}:users");
+        if (usersJson is null) return;
+
+        var users = JsonSerializer.Deserialize<List<string>>(usersJson) ?? [];
+        users.Remove(userName);
+        await cache.SetStringAsync($"room:{room}:users", JsonSerializer.Serialize(users));
     }
 }

@@ -1,0 +1,29 @@
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./Backend/Chat/Chat
+      dockerfile: Dockerfile
+    ports:
+      - "7086:8080"
+    environment:
+      - ConnectionStrings__Redis=redis:6379
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./Frontend/Chat
+      dockerfile: Dockerfile
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
