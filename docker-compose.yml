@@ -7,7 +7,7 @@ services:
 
   backend:
     build:
-      context: ./Backend/Chat/Chat
+      context: ./Backend/Chat
       dockerfile: Dockerfile
     ports:
       - "7086:8080"

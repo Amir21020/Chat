@@ -15,7 +15,7 @@ Real-time чат на SignalR с поддержкой комнат, списка
 1. **Redis** — должен быть доступен на `localhost:6379`
 2. **Backend:**
    ```bash
-   cd Backend/Chat/Chat
+   cd Backend/Chat
    dotnet run
    ```
 3. **Frontend:**
